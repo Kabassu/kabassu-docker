@@ -10,7 +10,7 @@ COPY kabassu.${KABASSU_VERSION}.zip .
 
 RUN unzip kabassu.${KABASSU_VERSION}.zip
 
-COPY kab-app/modules/io.kabassu.mongo.json ./modules/
+COPY configuration/* ./modules/
 
 EXPOSE 8082 8092
 
