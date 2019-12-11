@@ -1,0 +1,19 @@
+{
+  "config": {
+    "setupMode": true,
+    "runmode": "NORMAL",
+    "security": "NONE",
+    "modules_directory": "libs/"
+  },
+  "modules": {
+    "stores": [
+      {
+        "type":"kabassu-modules",
+        "optional":false,
+        "config":{
+          "path":"./modules"
+        }
+      }
+    ]
+  }
+}
