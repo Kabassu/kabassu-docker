@@ -1,0 +1,29 @@
+version: '3.7'
+
+networks:
+    kabassu-net:
+
+services:
+    kabassu-app:
+        image: kabassu:0.3
+        depends_on:
+            - "mongodb"
+        ports: 
+            - "8081:8080"
+            - "9090:9090"
+        networks:
+            - kabassu-net
+    
+    mongodb:
+        image: mongo
+        volumes:
+            - "./mongo-data:/data/db"
+        networks:
+            - kabassu-net
+
+    kabassu-gui:
+        image: kabassu-gui:0.2
+        ports:
+            - "3000:3000"
+        networks:
+            - kabassu-net
